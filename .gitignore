@@ -28,3 +28,7 @@ Thumbs.db
 # Test data
 *.test-data.json
 taskpilot-test-*/
+
+# Others
+.worktrees/
+_research/
