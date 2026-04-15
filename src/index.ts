@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 import { Command } from 'commander';
 import { addCommand, listCommand, moveCommand, doneCommand, statsCommand, removeCommand } from './commands';
 

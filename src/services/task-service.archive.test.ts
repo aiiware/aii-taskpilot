@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 jest.mock('../storage/storage', () => ({
   loadBoard: jest.fn(() => ({ name: 'default', tasks: [], nextId: 1 })),
   saveBoard: jest.fn(),

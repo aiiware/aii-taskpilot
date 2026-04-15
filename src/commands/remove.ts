@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // src/commands/remove.ts
 import { Command } from 'commander';
 import { TaskService } from '../services/task-service';

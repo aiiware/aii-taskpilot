@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // storage.ts
 import { Board } from '../models';
 import fs from 'fs';

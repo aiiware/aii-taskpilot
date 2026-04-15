@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2024 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
+/**
+ * Copyright (c) 2024 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // src/commands/done.ts
 import { Command } from 'commander';
 import { TaskService } from '../services/task-service';
