@@ -4,16 +4,19 @@
   "description": "A CLI task board tool — a local, file-based Trello from the terminal",
   "main": "dist/index.js",
   "bin": {
-    "taskpilot": "dist/index.js"
+    "taskpilot": "bin/taskpilot"
   },
   "scripts": {
     "build": "tsc",
+    "postbuild": "chmod +x dist/index.js",
+    "bundle": "node esbuild.config.mjs",
+    "build:full": "npm run build && npm run bundle",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts tests/**/*.ts",
-    "prepare": "npm run build"
+    "prepare": "npm run build:full"
   },
   "keywords": [
     "cli",
@@ -32,6 +35,7 @@
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "esbuild": "^0.24.2",
     "eslint": "^8.0.0",
     "jest": "^29.5.0",
     "prettier": "^3.0.0",
