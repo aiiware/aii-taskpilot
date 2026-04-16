@@ -11,8 +11,8 @@
 export interface Task {
   id: number;
   title: string;
-  status: 'todo' | 'doing' | 'review' | 'done';
-  priority: 'low' | 'medium' | 'high';
+  status: "todo" | "doing" | "review" | "done";
+  priority: "low" | "medium" | "high";
   tags: string[];
   createdAt: string; // ISO 8601
   updatedAt: string; // ISO 8601
@@ -21,7 +21,7 @@ export interface Task {
 /**
  * Draft of a task without id and timestamps. Used for creation before persisting.
  */
-export type TaskDraft = Omit<Task, 'id' | 'createdAt' | 'updatedAt'>;
+export type TaskDraft = Omit<Task, "id" | "createdAt" | "updatedAt">;
 
 /**
  * Create a task draft with default values.
@@ -30,11 +30,14 @@ export type TaskDraft = Omit<Task, 'id' | 'createdAt' | 'updatedAt'>;
  */
 export function createTask(
   title: string,
-  { priority = 'medium', tags = [] }: { priority?: 'low' | 'medium' | 'high'; tags?: string[] } = {}
+  {
+    priority = "medium",
+    tags = [],
+  }: { priority?: "low" | "medium" | "high"; tags?: string[] } = {},
 ): TaskDraft {
   return {
     title,
-    status: 'todo',
+    status: "todo",
     priority,
     tags,
   };

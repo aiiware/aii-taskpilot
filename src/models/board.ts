@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  */
 
-import { Task } from './task';
+import { Task } from "./task";
 
 export interface Board {
   name: string;

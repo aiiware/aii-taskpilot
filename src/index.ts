@@ -1,10 +1,11 @@
+#!/usr/bin/env node
 /**
  * Copyright (c) 2024-2026 TaskPilot Contributors
  * Licensed under the MIT License.
  */
 
 import { Command } from 'commander';
-import { addCommand, listCommand, moveCommand, doneCommand, statsCommand, removeCommand } from './commands';
+import { addCommand, listCommand, moveCommand, doneCommand, statsCommand, removeCommand, archiveCommand } from './commands';
 
 const program = new Command();
 
@@ -20,5 +21,6 @@ program.addCommand(moveCommand);
 program.addCommand(doneCommand);
 program.addCommand(statsCommand);
 program.addCommand(removeCommand);
+program.addCommand(archiveCommand);
 
 program.parse();

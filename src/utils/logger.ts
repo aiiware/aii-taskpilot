@@ -4,9 +4,9 @@
  */
 
 // utils/logger.ts
-import chalk from 'chalk';
+import chalk from "chalk";
 
-export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
+export type LogLevel = "debug" | "info" | "warn" | "error";
 
 export interface LoggerOptions {
   level?: LogLevel;
@@ -27,8 +27,8 @@ export class Logger {
   private colors: boolean;
 
   constructor(options: LoggerOptions = {}) {
-    this.level = options.level || 'info';
-    this.prefix = options.prefix || 'taskpilot';
+    this.level = options.level || "info";
+    this.prefix = options.prefix || "taskpilot";
     this.colors = options.colors ?? true;
   }
 
@@ -39,48 +39,48 @@ export class Logger {
   private formatMessage(level: LogLevel, message: string): string {
     const timestamp = new Date().toISOString();
     let formatted = `[${timestamp}] [${this.prefix}] [${level.toUpperCase()}] ${message}`;
-    
+
     if (this.colors) {
       switch (level) {
-        case 'debug':
+        case "debug":
           formatted = chalk.gray(formatted);
           break;
-        case 'info':
+        case "info":
           formatted = chalk.blue(formatted);
           break;
-        case 'warn':
+        case "warn":
           formatted = chalk.yellow(formatted);
           break;
-        case 'error':
+        case "error":
           formatted = chalk.red(formatted);
           break;
       }
     }
-    
+
     return formatted;
   }
 
   debug(message: string, ...args: any[]): void {
-    if (this.shouldLog('debug')) {
-      console.debug(this.formatMessage('debug', message), ...args);
+    if (this.shouldLog("debug")) {
+      console.debug(this.formatMessage("debug", message), ...args);
     }
   }
 
   info(message: string, ...args: any[]): void {
-    if (this.shouldLog('info')) {
-      console.info(this.formatMessage('info', message), ...args);
+    if (this.shouldLog("info")) {
+      console.info(this.formatMessage("info", message), ...args);
     }
   }
 
   warn(message: string, ...args: any[]): void {
-    if (this.shouldLog('warn')) {
-      console.warn(this.formatMessage('warn', message), ...args);
+    if (this.shouldLog("warn")) {
+      console.warn(this.formatMessage("warn", message), ...args);
     }
   }
 
   error(message: string, ...args: any[]): void {
-    if (this.shouldLog('error')) {
-      console.error(this.formatMessage('error', message), ...args);
+    if (this.shouldLog("error")) {
+      console.error(this.formatMessage("error", message), ...args);
     }
   }
 
@@ -104,6 +104,6 @@ export const logger = new Logger();
 
 // Create a CLI-specific logger for command output
 export const cliLogger = new Logger({
-  prefix: 'taskpilot',
-  level: 'info',
+  prefix: "taskpilot",
+  level: "info",
 });

@@ -4,8 +4,8 @@
  */
 
 // src/services/task-service.ts
-import { Board, Task, createTask } from '../models';
-import { loadBoard, saveBoard } from '../storage/storage';
+import { Board, Task, createTask } from "../models";
+import { loadBoard, saveBoard } from "../storage/storage";
 
 /**
  * Service for managing tasks in the board.
@@ -23,10 +23,13 @@ export class TaskService {
    * @param options - Optional priority and tags
    * @returns The created task
    */
-  addTask(title: string, options?: { priority?: 'low' | 'medium' | 'high'; tags?: string[] }): Task {
+  addTask(
+    title: string,
+    options?: { priority?: "low" | "medium" | "high"; tags?: string[] },
+  ): Task {
     const draft = createTask(title, options);
     const now = new Date().toISOString();
-    
+
     const task: Task = {
       ...draft,
       id: this.board.nextId,
@@ -45,11 +48,11 @@ export class TaskService {
    * Get all tasks, optionally filtered.
    */
   getTasks(filters?: {
-    status?: Task['status'];
-    priority?: Task['priority'];
+    status?: Task["status"];
+    priority?: Task["priority"];
     tag?: string;
   }): Task[] {
-    return this.board.tasks.filter(task => {
+    return this.board.tasks.filter((task) => {
       if (filters?.status && task.status !== filters.status) return false;
       if (filters?.priority && task.priority !== filters.priority) return false;
       if (filters?.tag && !task.tags.includes(filters.tag)) return false;
@@ -63,8 +66,8 @@ export class TaskService {
    * @param status - New status
    * @returns The updated task, or undefined if not found
    */
-  moveTask(id: number, status: Task['status']): Task | undefined {
-    const task = this.board.tasks.find(t => t.id === id);
+  moveTask(id: number, status: Task["status"]): Task | undefined {
+    const task = this.board.tasks.find((t) => t.id === id);
     if (!task) return undefined;
 
     task.status = status;
@@ -80,7 +83,16 @@ export class TaskService {
    * @returns The updated task, or undefined if not found
    */
   doneTask(id: number): Task | undefined {
-    return this.moveTask(id, 'done');
+    return this.moveTask(id, "done");
+  }
+
+  /**
+   * Mark a task as archived (done).
+   * @param id - Task ID
+   * @returns The updated task, or undefined if not found
+   */
+  archiveTask(id: number): Task | undefined {
+    return this.moveTask(id, "done");
   }
 
   /**
@@ -89,7 +101,7 @@ export class TaskService {
    * @returns true if task was removed, false if not found
    */
   removeTask(id: number): boolean {
-    const index = this.board.tasks.findIndex(t => t.id === id);
+    const index = this.board.tasks.findIndex((t) => t.id === id);
     if (index === -1) return false;
 
     this.board.tasks.splice(index, 1);
@@ -101,19 +113,19 @@ export class TaskService {
    * Get statistics about tasks.
    */
   getStats(): {
-    byStatus: Record<Task['status'], number>;
+    byStatus: Record<Task["status"], number>;
     byTag: Record<string, number>;
-    byPriority: Record<Task['priority'], number>;
+    byPriority: Record<Task["priority"], number>;
     total: number;
   } {
-    const byStatus: Record<Task['status'], number> = {
+    const byStatus: Record<Task["status"], number> = {
       todo: 0,
       doing: 0,
       review: 0,
       done: 0,
     };
 
-    const byPriority: Record<Task['priority'], number> = {
+    const byPriority: Record<Task["priority"], number> = {
       low: 0,
       medium: 0,
       high: 0,
@@ -121,11 +133,11 @@ export class TaskService {
 
     const byTag: Record<string, number> = {};
 
-    this.board.tasks.forEach(task => {
+    this.board.tasks.forEach((task) => {
       byStatus[task.status]++;
       byPriority[task.priority]++;
-      
-      task.tags.forEach(tag => {
+
+      task.tags.forEach((tag) => {
         byTag[tag] = (byTag[tag] || 0) + 1;
       });
     });
@@ -142,7 +154,7 @@ export class TaskService {
    * Get a task by ID.
    */
   getTask(id: number): Task | undefined {
-    return this.board.tasks.find(t => t.id === id);
+    return this.board.tasks.find((t) => t.id === id);
   }
 
   private save(): void {
