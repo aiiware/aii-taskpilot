@@ -5,14 +5,15 @@
  */
 
 import { Command } from 'commander';
-import { addCommand, listCommand, moveCommand, doneCommand, statsCommand, removeCommand, archiveCommand } from './commands';
+import { addCommand, listCommand, moveCommand, doneCommand, statsCommand, removeCommand, archiveCommand, versionCommand } from './commands';
+import { VERSION } from './constants';
 
 const program = new Command();
 
 program
   .name('taskpilot')
   .description('A CLI task board tool — a local, file-based Trello from the terminal')
-  .version('0.1.0');
+  .version(VERSION);
 
 // Add commands
 program.addCommand(addCommand);
@@ -22,5 +23,6 @@ program.addCommand(doneCommand);
 program.addCommand(statsCommand);
 program.addCommand(removeCommand);
 program.addCommand(archiveCommand);
+program.addCommand(versionCommand);
 
 program.parse();

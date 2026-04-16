@@ -11,3 +11,4 @@ export * from "./done";
 export * from "./stats";
 export * from "./remove";
 export * from "./archive";
+export * from "./version";

@@ -47,6 +47,16 @@ describe("CLI Integration", () => {
     return cleaned;
   };
 
+  it("shows version with --version flag", () => {
+    const output = runCli("--version");
+    expect(output.trim()).toBe("0.1.0");
+  });
+
+  it("shows version with version command", () => {
+    const output = runCli("version");
+    expect(output.trim()).toBe("0.1.0");
+  });
+
   it("shows help", () => {
     const output = runCli("--help");
     expect(output).toContain("taskpilot");
@@ -56,6 +66,7 @@ describe("CLI Integration", () => {
     expect(output).toContain("done");
     expect(output).toContain("stats");
     expect(output).toContain("remove");
+    expect(output).toContain("version");
   });
 
   it("adds and lists tasks", () => {
