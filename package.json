@@ -2,10 +2,14 @@
   "name": "taskpilot",
   "version": "0.1.0",
   "description": "A CLI task board tool — a local, file-based Trello from the terminal",
-  "main": "dist/index.js",
   "bin": {
     "taskpilot": "bin/taskpilot"
   },
+  "files": [
+    "bin/",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "postbuild": "chmod +x dist/index.js",

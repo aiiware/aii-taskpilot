@@ -9,10 +9,11 @@ esbuild.config.mjs
 Makefile
 demo.sh
 AGENTS.md
+.eslintrc.json
+.prettierrc
 
 # Build artifacts (already in .gitignore but explicit here)
 dist/
-bin/
 coverage/
 
 # IDE and OS files
@@ -34,3 +35,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Research directory
+_research/
+
+# Git worktrees
+.worktrees/
