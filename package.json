@@ -1,6 +1,6 @@
 {
   "name": "@aiiware/taskpilot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A CLI task board tool — a local, file-based Trello from the terminal. Developed with Aii 🪼",
   "repository": {
     "type": "git",
