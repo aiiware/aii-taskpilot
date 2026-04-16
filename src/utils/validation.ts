@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 TaskPilot Contributors
+ * Copyright (c) 2024-2026 TaskPilot Contributors
  * Licensed under the MIT License.
  */
 

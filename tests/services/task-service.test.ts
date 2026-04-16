@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024-2026 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // tests/services/task-service.test.ts
 import { TaskService } from '../../src/services/task-service';
 import fs from 'fs';

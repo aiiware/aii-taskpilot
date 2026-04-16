@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024-2026 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // tests/commands/integration.test.ts
 import { execSync } from 'child_process';
 import fs from 'fs';

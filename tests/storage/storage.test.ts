@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024-2026 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // tests/storage/storage.test.ts
 import { getHomeDir, getFilePath, ensureStorage, loadBoard, saveBoard } from '../../src/storage/storage';
 import { Board } from '../../src/models';

@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024-2026 TaskPilot Contributors
+ * Licensed under the MIT License.
+ */
+
 // tests/models/task.test.ts
 import { createTask } from '../../src/models/task';
 
