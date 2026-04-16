@@ -1,7 +1,15 @@
 {
-  "name": "taskpilot",
+  "name": "@aiiware/taskpilot",
   "version": "0.1.0",
-  "description": "A CLI task board tool — a local, file-based Trello from the terminal",
+  "description": "A CLI task board tool — a local, file-based Trello from the terminal. Developed with Aii 🪼",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aiiware/aii-taskpilot.git"
+  },
+  "homepage": "https://github.com/aiiware/aii-taskpilot#readme",
+  "bugs": {
+    "url": "https://github.com/aiiware/aii-taskpilot/issues"
+  },
   "bin": {
     "taskpilot": "bin/taskpilot"
   },
@@ -26,7 +34,9 @@
     "cli",
     "task",
     "board",
-    "productivity"
+    "productivity",
+    "aii",
+    "aiiware"
   ],
   "author": "TaskPilot Contributors",
   "license": "MIT",

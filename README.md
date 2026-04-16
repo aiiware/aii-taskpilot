@@ -1,21 +1,22 @@
 # TaskPilot 🚀
 
-A CLI task board tool — a local, file-based Trello from the terminal.
+A CLI task board tool — a local, file-based Trello from the terminal. **Developed with Aii 🪼**
 
-## Features
-
-- **Local & Private**: All data stored in `~/.taskpilot/` — no cloud, no accounts
-- **Fast**: Instant operations, no network latency
-- **Flexible**: Filter tasks by status, priority, or tags
-- **Visual**: Color-coded output with statistics
-- **Zero Dependencies**: Just Node.js and your terminal
+[![npm version](https://img.shields.io/npm/v/@aiiware/taskpilot)](https://www.npmjs.com/package/@aiiware/taskpilot)
+[![GitHub](https://img.shields.io/badge/GitHub-aiiware%2Faii--taskpilot-blue)](https://github.com/aiiware/aii-taskpilot)
 
 ## Installation
 
+### From npm (recommended)
+```bash
+npm install -g @aiiware/taskpilot
+```
+
+### From source
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd taskpilot
+git clone https://github.com/aiiware/aii-taskpilot.git
+cd aii-taskpilot
 
 # Install dependencies
 npm install
@@ -26,6 +27,14 @@ npm run build
 # Install globally (optional)
 npm link
 ```
+
+## Features
+
+- **Local & Private**: All data stored in `~/.taskpilot/` — no cloud, no accounts
+- **Fast**: Instant operations, no network latency
+- **Flexible**: Filter tasks by status, priority, or tags
+- **Visual**: Color-coded output with statistics
+- **Zero Dependencies**: Just Node.js and your terminal
 
 ## Usage
 
@@ -71,6 +80,13 @@ Shows breakdown by status, priority, and tags with visual bars.
 ### Remove Tasks
 ```bash
 taskpilot remove 4
+```
+
+### Check Version
+```bash
+taskpilot --version
+# or
+taskpilot version
 ```
 
 ## Data Model
@@ -127,6 +143,10 @@ src/
 3. **Type Safety**: TypeScript strict mode, no `any` types
 4. **User Experience**: Clear error messages with actionable fixes
 5. **Simplicity**: No databases, no config files, no plugins
+
+## Built with Aii 🪼
+
+This project was developed using [Aii](https://aiiware.com) — an AI-powered development assistant that helps write, test, and ship code faster. The development process followed Aii's TDD-first approach with comprehensive test coverage and clean architecture.
 
 ## License
 

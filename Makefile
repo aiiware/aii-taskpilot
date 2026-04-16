@@ -89,18 +89,18 @@ list:
 	@npm pack --dry-run 2>&1
 	@echo ""
 	@echo "Package info:"
-	@echo "  Name: taskpilot"
+	@echo "  Name: @aiiware/taskpilot"
 	@echo "  Version: $$(grep '"version"' package.json | head -1 | sed 's/.*: *\"\([^\"]*\)\".*/\1/')"
 	@echo "  Main binary: ./bin/taskpilot"
 
 # Publish to npm (builds first)
 publish: clean build test
 	@echo ""
-	@echo "Ready to publish taskpilot v$$(grep '"version"' package.json | head -1 | sed 's/.*: *\"\([^\"]*\)\".*/\1/')"
+	@echo "Ready to publish @aiiware/taskpilot v$$(grep '"version"' package.json | head -1 | sed 's/.*: *\"\([^\"]*\)\".*/\1/')"
 	@echo "================================================"
 	@npm pack --dry-run 2>&1
 	@echo ""
 	@read -p "Proceed with npm publish? [y/N] " confirm && [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]
 	npm publish --access public
 	@echo ""
-	@echo "Published! Install with: npm install -g taskpilot"
+	@echo "Published! Install with: npm install -g @aiiware/taskpilot"
