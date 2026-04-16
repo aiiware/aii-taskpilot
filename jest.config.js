@@ -15,5 +15,13 @@ module.exports = {
       lines: 80,
       statements: 80
     }
+  },
+  transformIgnorePatterns: [
+    // Don't transform chalk since it uses ES modules
+    'node_modules/(?!(chalk)/)'
+  ],
+  moduleNameMapper: {
+    // Mock chalk to avoid ES module issues
+    '^chalk$': '<rootDir>/tests/__mocks__/chalk.ts'
   }
 };
